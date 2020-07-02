@@ -1,0 +1,28 @@
+{
+  "name": "tecstac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch back --exec babel-node back/server.js",
+    "build": "rm -rf dist && babel back -d dist",
+    "heroku-postbuild": "npm run build && cd front && npm install && npm run build"
+  },
+  "engines": {"node": "12.4.0", "npm": "6.9.0"},
+  "author": "Kyle Deguzman <kyledeguzman147@yahoo.com> (http://www.kylehomepage.com)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.16"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.0",
+    "@babel/core": "^7.10.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
